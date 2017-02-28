@@ -1,0 +1,32 @@
+{
+  "name": "karv",
+  "version": "0.0.0",
+  "description": "Create a shallow copy of object's enumerable properties if it is frozen, sealed or non-extensible.",
+  "main": "karv.deploy.js",
+  "support": "karv.support.js",
+  "authors": [
+    "Richeve S. Bebedor <richeve.bebedor@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "shallow",
+    "copy",
+    "enumerable",
+    "property",
+    "karv"
+  ],
+  "homepage": "https://github.com/volkovasystems/karv",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "doubt": "^0.17.0",
+    "falzy": "^0.13.0",
+    "protype": "^0.17.0",
+    "publist": "^0.1.0"
+  }
+}
