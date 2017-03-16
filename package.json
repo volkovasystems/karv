@@ -1,13 +1,13 @@
 {
   "name": "karv",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Create a shallow copy of object's enumerable properties if it is frozen, sealed or non-extensible.",
   "main": "karv.js",
   "support": "karv.support.js",
   "deploy": "karv.deploy.js",
   "browser": "karv.deploy.js",
   "scripts": {
-	"build": "babel karv.js --out-file karv.support.js --source-maps && webpack --progress --display-modules",
+    "build": "babel karv.js --out-file karv.support.js --source-maps && webpack --progress --display-modules",
     "test": "mocha karv-test.js"
   },
   "repository": {
@@ -22,6 +22,9 @@
     "karv"
   ],
   "author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
+  "contributors": [
+    "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/volkovasystems/karv/issues"
@@ -29,17 +32,17 @@
   "homepage": "https://github.com/volkovasystems/karv#readme",
   "dependencies": {
     "babel-runtime": "^6.23.0",
-    "doubt": "^0.17.0",
-    "falzy": "^0.13.0",
-    "protype": "^0.17.0",
-    "publist": "^0.1.0"
+    "doubt": "^0.22.0",
+    "falzy": "^0.16.0",
+    "protype": "^0.20.0",
+    "publist": "^0.2.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.23.0",
-    "babel-core": "^6.23.1",
+    "babel-cli": "^6.24.0",
+    "babel-core": "^6.24.0",
     "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-latest": "^6.22.0",
-    "source-map-loader": "^0.1.6",
+    "babel-preset-latest": "^6.24.0",
+    "source-map-loader": "^0.2.0",
     "webpack": "^2.2.1"
   }
 }
