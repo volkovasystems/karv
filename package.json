@@ -1,6 +1,6 @@
 {
   "name": "karv",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Create a shallow copy of object's enumerable properties if it is frozen, sealed or non-extensible.",
   "main": "karv.js",
   "support": "karv.support.js",
@@ -35,14 +35,14 @@
     "doubt": "^0.24.0",
     "falzy": "^0.17.0",
     "protype": "^0.21.0",
-    "publist": "^0.4.0"
+    "publist": "^0.5.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.0",
-    "babel-core": "^6.24.0",
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
     "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-latest": "^6.24.0",
-    "source-map-loader": "^0.2.0",
-    "webpack": "^2.3.2"
+    "babel-preset-latest": "^6.24.1",
+    "source-map-loader": "^0.2.1",
+    "webpack": "^2.3.3"
   }
 }
