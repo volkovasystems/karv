@@ -1,4 +1,6 @@
-
+const assert = require( "assert")
 const karv = require( "./karv.js" );
 
-console.log( karv( global ) );
+assert.ok( karv( global ) );
+
+console.log( "ok" );
