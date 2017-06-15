@@ -1,8 +1,28 @@
+<!DOCTYPE html>
 <html>
 	<head>
-		<script
-			type="application/javascript"
-			src="./karv.deploy.js">
-		</script>
+		<title>karv unit test</title>
+
+		<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.3.2.css">
+
+		<script type="application/javascript" src="https://code.jquery.com/qunit/qunit-2.3.2.js"></script>
+
+		<script type="application/javascript" src="./karv.deploy.js"></script>
 	</head>
+
+	<body>
+		<div id="qunit"></div>
+
+		<div id="qunit-fixture"></div>
+
+		<script type="application/javascript">
+			QUnit.test( "karv unit test", function( assert ) {
+
+				assert.deepEqual( karv( { "name": "simple" } ), { "name": "simple" }, "should be deeply equal" );
+
+				assert.equal( typeof karv( { "name": "simple" } ), "object", "should return 'object'" );
+
+			} );
+		</script>
+	</body>
 </html>
