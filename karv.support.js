@@ -52,17 +52,13 @@
               	@include:
               		{
               			"doubt": "doubt",
-              			"falzy": "falzy",
-              			"protype": "protype",
-              			"publist": "publist"
+              			"falzy": "falzy"
               		}
               	@end-include
-              */var _isFrozen = require("babel-runtime/core-js/object/is-frozen");var _isFrozen2 = _interopRequireDefault(_isFrozen);var _isSealed = require("babel-runtime/core-js/object/is-sealed");var _isSealed2 = _interopRequireDefault(_isSealed);var _isExtensible = require("babel-runtime/core-js/object/is-extensible");var _isExtensible2 = _interopRequireDefault(_isExtensible);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+              */var _isFrozen = require("babel-runtime/core-js/object/is-frozen");var _isFrozen2 = _interopRequireDefault(_isFrozen);var _isSealed = require("babel-runtime/core-js/object/is-sealed");var _isSealed2 = _interopRequireDefault(_isSealed);var _isExtensible = require("babel-runtime/core-js/object/is-extensible");var _isExtensible2 = _interopRequireDefault(_isExtensible);var _typeof2 = require("babel-runtime/helpers/typeof");var _typeof3 = _interopRequireDefault(_typeof2);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 var doubt = require("doubt");
 var falzy = require("falzy");
-var protype = require("protype");
-var publist = require("publist");
 
 var karv = function karv(entity) {
 	/*;
@@ -73,7 +69,7 @@ var karv = function karv(entity) {
                                   	@end-meta-configuration
                                   */
 
-	if (falzy(entity) || !protype(entity, OBJECT)) {
+	if (falzy(entity) || (typeof entity === "undefined" ? "undefined" : (0, _typeof3.default)(entity)) != "object") {
 		throw new Error("invalid entity");
 	}
 
@@ -91,9 +87,9 @@ var karv = function karv(entity) {
 		});
 	}
 
-	publist(entity).forEach(function (definition) {
-		copy[definition.property] = definition.value;
-	});
+	for (property in entity) {
+		copy[property] = entity[property];
+	}
 
 	return copy;
 };

@@ -2,8 +2,6 @@ yarn add \
 babel-runtime \
 doubt \
 falzy \
-protype \
-publist \
 --save && \
 yarn add \
 babel-cli \
@@ -16,7 +14,5 @@ webpack \
 bower install \
 doubt \
 falzy \
-protype \
-publist \
 --save \
 --force-latest

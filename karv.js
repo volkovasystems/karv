@@ -52,17 +52,13 @@
 	@include:
 		{
 			"doubt": "doubt",
-			"falzy": "falzy",
-			"protype": "protype",
-			"publist": "publist"
+			"falzy": "falzy"
 		}
 	@end-include
 */
 
 const doubt = require( "doubt" );
 const falzy = require( "falzy" );
-const protype = require( "protype" );
-const publist = require( "publist" );
 
 const karv = function karv( entity ){
 	/*;
@@ -73,7 +69,7 @@ const karv = function karv( entity ){
 		@end-meta-configuration
 	*/
 
-	if( falzy( entity ) || !protype( entity, OBJECT ) ){
+	if( falzy( entity ) || typeof entity != "object" ){
 		throw new Error( "invalid entity" );
 	}
 
@@ -91,9 +87,9 @@ const karv = function karv( entity ){
 		} );
 	}
 
-	publist( entity ).forEach( ( definition ) => {
-		copy[ definition.property ] = definition.value;
-	} );
+	for( property in entity ){
+		copy[ property ] = entity[ property ];
+	}
 
 	return copy;
 };

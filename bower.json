@@ -1,6 +1,6 @@
 {
   "name": "karv",
-  "version": "0.14.0",
+  "version": "0.15.0",
   "description": "Create a shallow copy of object's enumerable properties if it is frozen, sealed or non-extensible.",
   "main": "karv.deploy.js",
   "support": "karv.support.js",
@@ -27,8 +27,6 @@
   ],
   "dependencies": {
     "doubt": "^0.27.0",
-    "falzy": "^0.20.0",
-    "protype": "^0.22.0",
-    "publist": "^0.16.0"
+    "falzy": "^0.20.0"
   }
 }
