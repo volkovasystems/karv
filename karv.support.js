@@ -87,7 +87,7 @@ var karv = function karv(entity) {
 		});
 	}
 
-	for (property in entity) {
+	for (var property in entity) {
 		copy[property] = entity[property];
 	}
 

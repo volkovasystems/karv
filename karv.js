@@ -87,7 +87,7 @@ const karv = function karv( entity ){
 		} );
 	}
 
-	for( property in entity ){
+	for( let property in entity ){
 		copy[ property ] = entity[ property ];
 	}
 
