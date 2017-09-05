@@ -63,11 +63,25 @@ const karv = require( "./karv.js" );
 
 
 //: @server:
-
 describe( "karv", ( ) => {
 
-} );
+	describe( "`karv( { 'name': 'simple' } )`", ( ) => {
+		it( "should create a shallow copy of object's enumerable properties", ( ) => {
+			assert.deepEqual( typeof karv( { "name": "simple" } ), "object" );
 
+			assert.deepEqual( karv( { "name": "simple" } ), { "name": "simple" } );
+		} );
+	} );
+
+	describe( "`karv( Object.freeze( { 'name': 'simple' } ) )`", ( ) => {
+		it( "should create a shallow copy of frozen object's enumerable properties", ( ) => {
+			assert.deepEqual( typeof karv( Object.freeze( { "name": "simple" } ) ), "object" );
+
+			assert.deepEqual( karv( Object.freeze( { "name": "simple" } ) ), { "name": "simple" } );
+		} );
+	} );
+
+} );
 //: @end-server
 
 

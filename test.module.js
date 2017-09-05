@@ -67,27 +67,91 @@ const path = require( "path" );
 
 
 //: @server:
-
 describe( "karv", ( ) => {
 
-} );
+	describe( "`karv( { 'name': 'simple' } )`", ( ) => {
+		it( "should create a shallow copy of object's enumerable properties", ( ) => {
+			assert.deepEqual( typeof karv( { "name": "simple" } ), "object" );
 
+			assert.deepEqual( karv( { "name": "simple" } ), { "name": "simple" } );
+		} );
+	} );
+
+	describe( "`karv( Object.freeze( { 'name': 'simple' } ) )`", ( ) => {
+		it( "should create a shallow copy of frozen object's enumerable properties", ( ) => {
+			assert.deepEqual( typeof karv( Object.freeze( { "name": "simple" } ) ), "object" );
+
+			assert.deepEqual( karv( Object.freeze( { "name": "simple" } ) ), { "name": "simple" } );
+		} );
+	} );
+
+} );
 //: @end-server
 
 
 //: @client:
-
 describe( "karv", ( ) => {
 
-} );
+	describe( "`karv( { 'name': 'simple' } )`", ( ) => {
+		it( "should create a shallow copy of object's enumerable properties", ( ) => {
+			assert.deepEqual( typeof karv( { "name": "simple" } ), "object" );
 
+			assert.deepEqual( karv( { "name": "simple" } ), { "name": "simple" } );
+		} );
+	} );
+
+	describe( "`karv( Object.freeze( { 'name': 'simple' } ) )`", ( ) => {
+		it( "should create a shallow copy of frozen object's enumerable properties", ( ) => {
+			assert.deepEqual( typeof karv( Object.freeze( { "name": "simple" } ) ), "object" );
+
+			assert.deepEqual( karv( Object.freeze( { "name": "simple" } ) ), { "name": "simple" } );
+		} );
+	} );
+
+} );
 //: @end-client
 
 
 //: @bridge:
-
 describe( "karv", ( ) => {
 
-} );
+	let bridgeURL = `file://${ path.resolve( __dirname, "bridge.html" ) }`;
 
+	describe( "`karv( { 'name': 'simple' } )`", ( ) => {
+		it( "should create a shallow copy of object's enumerable properties", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					let test = ( typeof karv( { "name": "simple" } ) == "object" ) &&
+						( karv( { "name": "simple" } ).name == "simple" );
+
+					return test;
+				}
+
+			).value;
+			//: @end-ignore
+			assert.equal( result, true );
+		} );
+	} );
+
+	describe( "`karv( Object.freeze( { 'name': 'simple' } ) )`", ( ) => {
+		it( "should create a shallow copy of frozen object's enumerable properties", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					let test = ( typeof karv( Object.freeze( { "name": "simple" } ) ) == "object" ) &&
+						( karv( Object.freeze( { "name": "simple" } ) ).name == "simple" );
+
+					return test;
+				}
+
+			).value;
+			//: @end-ignore
+			assert.equal( result, true );
+		} );
+	} );
+
+} );
 //: @end-bridge
